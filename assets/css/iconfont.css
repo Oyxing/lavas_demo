@@ -14,7 +14,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.clore{
+    clear: both;
+}
 .icon-close:before {
     content: "\e63c";
 }

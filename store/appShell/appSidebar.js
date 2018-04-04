@@ -44,7 +44,6 @@ export const mutations = {
 };
 
 export const actions = {
-
     /**
      * 展示侧边栏
      *

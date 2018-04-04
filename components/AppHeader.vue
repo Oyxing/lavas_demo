@@ -3,26 +3,14 @@
         name="slide-down">
         <header class="app-header-wrapper" v-show="show">
             <div class="app-header-left">
-                <v-btn
-                    icon
-                    v-if="showMenu"
-                    @click.native="handleClick('menu')">
-                    <v-icon color="white" class="app-header-icon">cccc</v-icon>
-                </v-btn>
-                <v-btn
-                    icon
-                    v-if="showBack"
-                    @click.native="handleClick('back')">
-                    <v-icon color="white" class="app-header-icon">aaaaaa</v-icon>
-                </v-btn>
                 <div v-if="showLogo" @click="handleClick('logo')">
                     <slot name="logo">
                         <img v-if="logoIcon.src" :src="logoIcon.src" :alt="logoIcon.alt" class="app-header-icon">
                     </slot>
                 </div>
-            </div>
-            <div class="app-header-middle" v-cloak>
-                <slot name="title">
+            </div> 
+            <div class="app-header-middle" v-cloak style="margin-left: 20px;color:#00b600;">
+                <slot name="title" >
                     {{ title }}
                 </slot>
             </div>
@@ -34,7 +22,10 @@
                     <v-btn
                         icon="icon"
                         @click.native="handleClick('action', {actionIdx, route: action.route})">
-                        <v-icon color="white" v-if="action.icon" class="app-header-icon">{{ action.icon }}</v-icon>
+                        <span :style="{color:action.color}" v-if="action.text">
+                                {{ action.text }}
+                        </span>
+                        <v-icon style="color:#00b600;" v-if="action.icon">{{action.icon}}</v-icon>
                     </v-btn>
                 </slot>
             </div>
@@ -100,7 +91,7 @@ export default {
 
 <style lang="stylus" scoped>
 @require '~@/assets/stylus/variable'
-$btn-color = #fff
+$btn-color = #00b600
 
 .app-header-wrapper
     display flex

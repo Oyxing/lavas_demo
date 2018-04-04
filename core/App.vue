@@ -6,11 +6,11 @@
                 @click-menu="handleClickHeaderMenu"
                 @click-back="handleClickHeaderBack">
             </app-header>
-            <app-sidebar
+            <!-- <app-sidebar
                 @hide-sidebar = "handleHideSidebar"
                 @show-sidebar = "handleShowSidebar"
             >
-            </app-sidebar>
+            </app-sidebar> -->
             <transition
                 :name="pageTransitionEffect"
                 @before-enter="handleBeforeEnter"
@@ -32,7 +32,7 @@
 <script>
 import {mapState, mapActions} from 'vuex';
 import AppHeader from '@/components/AppHeader';
-import AppSidebar from '@/components/AppSidebar';
+// import AppSidebar from '@/components/AppSidebar';
 import UpdateToast from '@/components/UpdateToast';
 import {keepAlivePages} from '@/.lavas/router';
 
@@ -41,7 +41,7 @@ export default {
     components: {
         UpdateToast,
         AppHeader,
-        AppSidebar
+        // AppSidebar
     },
     computed: {
         ...mapState('pageTransition', {
